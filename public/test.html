@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app>
+<meta charset="utf-8">
+<head>
+  <title>Angular Test</title>
+  <script src="js/angular-1.0.1.min.js"></script>
+  <script src="js/myscript.js"></script>
+  <style type="text/css">
+  .even {
+    background-color: #EEE;
+  }
+  .odd {
+    background-color: #CCC;
+  }
+  </style>
+</head>
+<body>
+<h1>Hello, Angular!</h1>
+<!-- <input type="text" ng-model="name">
+<p>こんにちは{{name}}</p>
+<p>{{5*3}}</p> -->
+<div ng-controller="mainCtrl" type="text">
+  <p ng-models>{{users.length}} users.</p>
+  <ul>
+  <p>{{25 * 500 | number}}</p>
+  <p>{{25 * 500 | currency:"\\"}}</p>
+  <!-- ￥でも可能だがバックスラッシュの場合は二つ使う -->
+  <p>{{today | date:'yyyy-MM-dd'}}</p>
+  <input type="text" ng-model="query">
+  <!-- query.nameにするとnameの値に一致するものを探す -->
+    <li ng-repeat="user in users | filter:query" ng-class-even="'even'" ng-class-odd="'odd'" ng-controller="userItemCtrl">
+    {{$index+1}} {{$first}} {{$middle}} {{$last}} {{user.name | uppercase}} {{user.score | number}}
+    <button ng-click="increment()">+1</button>
+    <button ng-click="decrement()">-1</button>
+    </li>
+  </ul>
+</div>
+</body>
+</html>

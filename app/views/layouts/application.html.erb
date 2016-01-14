@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- app.coffee の先頭のangular.moduleで宣言した名前にする -->
+<html ng-app="sampleApp">
+  <head>
+    <title>Angular</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://code.angularjs.org/tools/system.js"></script>
+    <script src="https://code.angularjs.org/tools/typescript.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-alpha.44/angular2.dev.js"></script>
+
+
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
